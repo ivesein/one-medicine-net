@@ -37,3 +37,37 @@ $('#menu_bd_app').mouseleave(function() {
     $('#menu_bd_app').css('display', 'none');
     $('.tell_title').css('display', 'none');
 });
+(function() {
+    //大轮播
+    var oCar_l_box = $('#car-l-box');
+    var aImgBox = $('.car-l-img-box');
+    var aCar_l_btn = $('.car-l-btn');
+    var iTimer = null;
+    var index = 0;
+    aCar_l_btn.mouseenter(function() {
+        index = $(this).index();
+        aCar_l_btn.removeClass('active').eq(index).addClass('active');
+        aImgBox.stop(true).fadeOut('normal').eq(index).stop(true).fadeIn('normal');
+    });
+
+    function autoMove() {
+        iTimer = setInterval(function() {
+            index++;
+            if (index > 6) {
+                index = 0;
+            }
+            move();
+        }, 3000);
+    }
+    oCar_l_box.hover(function() {
+        clearInterval(iTimer);
+    }, function() {
+        autoMove();
+    })
+
+    function move() {
+        aCar_l_btn.removeClass('active').eq(index).addClass('active');
+        aImgBox.stop(true).fadeOut('normal').eq(index).stop(true).fadeIn('normal');
+        console.log(aImgBox[index]);
+    }
+})();
