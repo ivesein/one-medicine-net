@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shutcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="dist/css/login.css" />
+    <title>登录</title>
+</head>
+
+<body>
+    <div class="wrap head">
+        <a href="index.html"><img src="images/yao_logo.png" /></a>
+    </div>
+    <div class="wrap login_wrap">
+        <a class="bg_link"></a>
+        <div class="tab_box clearFix">
+            <div class="item cur" id="commonLoginTab">
+                <a href="javascript:;">普通登录</a>
+            </div>
+            <div class="item" id="quickLoginTab">
+                <a href="javascript:;">手机快速登录</a>
+            </div>
+        </div>
+        <div class="tab_con" id="commonLogin">
+            <h2 class="lg_titile">
+                <span class="fr">还不是1药网会员？<a href="javascript:;" class="blue_link">免费注册</a></span>Hi，欢迎登录！
+            </h2>
+            <form autocomplete="off">
+                <div class="reg_row">
+                    <!-- 用户名 -->
+                    <input type="text" name="ecuserCustomer.id" id="username" utocomplete="off" placeholder="邮箱/手机号/用户名" class="form-control u_name" tabindex="1">
+                    <i id="pas_empty" class="i_empty">不能为空</i>
+                    <span id="accountDesc" class="error"></span>
+                </div>
+                <div class="reg_row">
+                    <!-- 密码 -->
+                    <input type="password" name="ecuserCustomer.password" id="userpass" utocomplete="off" placeholder="登录密码" class="form-control u_ps" tabindex="2">
+                    <span class="fr"><a href="javascript:;" class="gray">忘记密码？</a></span>
+                    <span id="pwd_desc" class="error"></span>
+                </div>
+                <div class="reg_row verify_box" id="vcd_div">
+                    <input type="text" maxlength="4" id="vcd" tabindex="3" name="validCode" placeholder="验证码" class="form-control u_verify">
+                    <i id="vcd_tatus"></i>
+                    <img src="/sso/getSecurityCode.action?t=1512976236197" alt="验证码" id="loginVcode" class="code verifyimg" onclick="this.src='sso/getSecourityCode.action?t='+(new date()).getTime()">
+                    <a href="javascript:;" class="verifylink" id="changecode" tabindex="-1">换一张</a>
+                    <span id="vcd_desc" class="error"></span>
+                </div>
+                <div>
+                    <!-- 1药网协议 -->
+                    <label class="checkbox">
+                        <input type="checkbox" value="1" name="rememberPwd" id="rememberPwd" tabindex="-1">
+                        <span class="two_week">两周内免登录</span>
+                    </label>
+                    <button id="btnSubmit" class="btn btn-primary">登录</button>
+                    <br/>
+                    <span id="login_desc" class="error"></span>
+                </div>
+                <div class="reg_row hz_login">
+                    <p>使用合作伙伴账号登录：</p>
+                    <a href="javascript:;" class="first a_wx"></a>
+                    <a href="javascript:;" class="a_zfb"></a>
+                    <a href="javascript:;" class="a_qq"></a>
+                </div>
+                <div class="moreWebDiv">
+                    <span class="moreWeb">更多合作网站
+                        <button class="moreWebBtn"></button>
+                    </span>
+                    <div class="moreTab">
+                        <a href="javascript:;" class="a_zfb"></a>
+                        <a href="javascript:;" class="a_zfb"></a>
+                        <a href="javascript:;" class="a_zfb"></a>
+                        <a href="javascript:;" class="a_zfb"></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- 快捷登录 -->
+        <div class="tab_con" id="quickLogin">
+            <h2 class="lg_titile">
+                <span class="fr">还不是1药网会员？<a href="javascript:;" class="blue_link">免费注册</a></span>Hi，欢迎登录！
+            </h2>
+            <div class="form_group pd35 clearFix">
+                <label class="lbs f1">
+                    <input type="text" class="txt phone" id="phoneNum4QuickLogin" placeholder="请输入您的手机号" value>
+                    <i class="i_empty" id="phoneNum4QuickLogin_empty">不能为空</i>
+                    <span id="phoneNum4QuickLoginDesc" class="error"></span>
+                </label>
+            </div>
+            <div class="form_group pd35 clearFix">
+                <label class="lbs fl mr10">
+                    <input type="text" class="txt check_num" id="smsCode4QuickLogin" placeholder="请输入短信验证码" value>
+                    <span id="smsCode4QuickLoginDesc" class="error"></span>
+                </label>
+                <label class="lbs fl">
+                    <button class="check_btn" id="getSmsCodeBtn">获取短信验证码</button>
+                </label>
+            </div>
+            <div>
+                <!-- 1药网协议 -->
+                <button id="btnSubmit" class="btn btn-primary">登录</button>
+                <br/>
+                <span id="login_desc" class="error"></span>
+            </div>
+            <div class="reg_row hz_login">
+                <p>使用合作伙伴账号登录：</p>
+                <a href="javascript:;" class="first a_wx"></a>
+                <a href="javascript:;" class="a_zfb"></a>
+                <a href="javascript:;" class="a_qq"></a>
+            </div>
+            <div class="moreWebDiv">
+                <span class="moreWeb">更多合作网站
+                    <button class="moreWebBtn"></button>
+                </span>
+                <div class="moreTab">
+                    <a href="javascript:;" class="a_zfb"></a>
+                    <a href="javascript:;" class="a_zfb"></a>
+                    <a href="javascript:;" class="a_zfb"></a>
+                    <a href="javascript:;" class="a_zfb"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>
+            <a href="javascript:;">关于1药网</a>|
+            <a href="javascript:;">互联网药品交易资格证</a>|
+            <a href="javascript:;">互联网药品信息服务资格证</a>|
+        </p>
+        <p>
+            <a href="javascript:;">连锁营业执照</a>|
+            <a href="javascript:;">保健食品卫生许可证</a>|
+            <a href="javascript:;">医疗器械许可证</a>|
+            <a href="javascript:;">食品流通许可证</a>|
+            <a href="javascript:;">GSP证书</a>|
+            <a href="javascript:;">粤ICP备12015869号</a>|
+        </p>
+        <p>
+            Copyright© 1药网 2010-2015， All Rights Reserved
+        </p>
+    </div>
+</body>
+
+</html>
