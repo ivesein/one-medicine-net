@@ -41,7 +41,9 @@
                     <span class="fr"><a href="javascript:;" class="gray">忘记密码？</a></span>
                     <span id="pwd_desc" class="error"></span>
                 </div>
+
                 <div class="reg_row verify_box" id="vcd_div">
+                    <!-- 验证码 -->
                     <input type="text" maxlength="4" id="vcd" tabindex="3" name="validCode" placeholder="验证码" class="form-control u_verify">
                     <i id="vcd_tatus"></i>
                     <img src="/sso/getSecurityCode.action?t=1512976236197" alt="验证码" id="loginVcode" class="code verifyimg" onclick="this.src='sso/getSecourityCode.action?t='+(new date()).getTime()">

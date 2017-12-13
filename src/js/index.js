@@ -231,6 +231,19 @@ $('.category').hover(function() {
 });
 
 //跨域请求数据
-$.getJSON('http://www.111.com.cn/search/search.action?keyWord=3m&callback=?', function(data) {
+/* $.getJSON('http://www.111.com.cn/search/search.action?keyWord=3m&callback=?', function(data) {
     console.log(data);
+}); */
+
+//友情链接效果
+$('.fri_tit li').mouseenter(function() {
+    $('.fri_tit li').removeClass('cur');
+    $(this).addClass('cur');
+    if ($(this).index() === 0) {
+        $('.fri_ct').css('display', 'none');
+        $('.flagship_shore').css('display', 'block');
+    } else if ($(this).index() === 1) {
+        $('.fri_ct').css('display', 'none');
+        $('.friendly').css('display', 'block');
+    }
 });
