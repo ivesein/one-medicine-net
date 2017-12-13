@@ -29,20 +29,61 @@
                     <i id="i_true" class="email_true"></i>
                     <span id="accountDesc" class="error"></span>
                 </div>
-                <div class="reg_pass_capslock" id="capsLock_msg"></div>
+                <div class="reg_pass_capslock" id="capsLock_msg">
+                    <i class="capsLock_msg_i"></i>
+                    <s class="capsLock_msg_s"></s> 键盘大写锁定已打开，请注意大小写
+                </div>
                 <div class="reg_row">
                     <!-- 密码 -->
                     <input type="password" name="ecuserCustomer.password" id="userpass" utocomplete="off" placeholder="登录密码" class="form-control u_ps" tabindex="2">
                     <span class="fr"><a href="javascript:;" class="gray">忘记密码？</a></span>
-                    <span id="pwd_desc" class="error"></span>
+                    <i class="i_empty" id="passport_empty">不能为空</i>
+                    <span id="password_tip">6-20位字符，建议由字母，数字和符号两种以上组合</span>
+                    <span id="password_error"></span>
+                    <i class="i_true" id="password_true"></i>
+                    <div class="box_safety" id="pswLevel">
+                        <ul>
+                            <li>弱</li>
+                            <li>中</li>
+                            <li>强</li>
+                        </ul>
+                        安全程度
+                    </div>
+                </div>
+
+                <div class="reg_row psheight">
+                    <!-- 确认密码 -->
+                    <input type="password" disabled name="password2" id="password2" placeholder="确认密码" class="form-control u_ps u_ps2" maxlength="20" />
+                    <i class="i_true" id="password2_true"></i>
+                    <span id="password2_desc"></span>
+                    <span id="password2_tip">请再次输入登录密码</span>
+                    <span id="password2_error"></span>
+                </div>
+                <div class="reg_row verify_box" id="vcd_div">
+                    <!-- 验证码 -->
+                    <input type="text" maxlength="4" id="vcd" tabindex="3" name="validCode" placeholder="验证码" class="form-control u_verify">
+                    <i id="vcd_tatus"></i>
+                    <img src="/sso/getSecurityCode.action?t=1512976236197" alt="验证码" id="loginVcode" class="code verifyimg" onclick="this.src='sso/getSecourityCode.action?t='+(new date()).getTime()">
+                    <a href="javascript:;" class="verifylink" id="changecode" tabindex="-1">换一张</a>
+                    <span id="vcd_desc" class="error"></span>
+                </div>
+                <div class="reg_row verify_box" id="phoneCodeDiv">
+                    <!-- 短信验证 -->
+                    <input type="text" maxlength="4" style="width:160px;" id="verifyCode" name="verifyCode" placeholder="短信验证" class="form-control u_verify">
+                    <i id="verifyCode_false" class="i_false"></i>
+                    <i id="verifyCode_true" class="i_true"></i>
+                    <a href="javascript:;" class="btn_verify" id="btnCode">获取短信验证码</a>
+                    <span id="msgcd_desc" class="error"></span>
                 </div>
                 <div>
                     <!-- 1药网协议 -->
                     <label class="checkbox">
-                        <input type="checkbox" value="1" name="rememberPwd" id="rememberPwd" tabindex="-1">
-                        <span class="two_week">两周内免登录</span>
+                        <input type="checkbox" value="1" checked id="xyCheckBox" tabindex="-1 ">
+                        <span class="two_week">我已阅读并同意 
+                        <a href="javascript:void(0);" onclick="window.open('http://www.111.com.cn/cms/view.do?topicId=22270','','width=600,height=600,scrollbars=1.resizeable=yes')">《1药网服务协议》</a></span>
+                        <span class="error" id="xyCheckBox_desc">请勾选1药网服务协议</span>
                     </label>
-                    <button id="btnSubmit" class="btn btn-primary">登录</button>
+                    <button id="registerButton" class="btn btn-primary">立即注册</button>
                     <br/>
                     <span id="login_desc" class="error"></span>
                 </div>
@@ -68,19 +109,19 @@
     </div>
 
 
-    <div class="footer">
+    <div class="footer ">
         <p>
-            <a href="javascript:;">关于1药网</a>|
-            <a href="javascript:;">互联网药品交易资格证</a>|
-            <a href="javascript:;">互联网药品信息服务资格证</a>|
+            <a href="javascript:; ">关于1药网</a>|
+            <a href="javascript:; ">互联网药品交易资格证</a>|
+            <a href="javascript:; ">互联网药品信息服务资格证</a>|
         </p>
         <p>
-            <a href="javascript:;">连锁营业执照</a>|
-            <a href="javascript:;">保健食品卫生许可证</a>|
-            <a href="javascript:;">医疗器械许可证</a>|
-            <a href="javascript:;">食品流通许可证</a>|
-            <a href="javascript:;">GSP证书</a>|
-            <a href="javascript:;">粤ICP备12015869号</a>|
+            <a href="javascript:; ">连锁营业执照</a>|
+            <a href="javascript:; ">保健食品卫生许可证</a>|
+            <a href="javascript:; ">医疗器械许可证</a>|
+            <a href="javascript:; ">食品流通许可证</a>|
+            <a href="javascript:; ">GSP证书</a>|
+            <a href="javascript:; ">粤ICP备12015869号</a>|
         </p>
         <p>
             Copyright© 1药网 2010-2015， All Rights Reserved

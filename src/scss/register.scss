@@ -74,6 +74,9 @@
         form {
             padding-left: 100px;
             padding-top: 5px;
+            .psheight {
+                height: 60px;
+            }
             .reg_row {
                 min-height: 70px;
                 _height: 70px;
@@ -103,6 +106,10 @@
                     -webkit-appearance: none;
                     background: url(../../images/regest.png) no-repeat 0 0;
                 }
+                .form-control[disabled] {
+                    background-color: #f3f3f3;
+                    cursor: not-allowed;
+                }
                 .u_name {
                     background-position: 8px -114px;
                 }
@@ -110,6 +117,7 @@
                     background-position: 8px -145px;
                 }
                 .i_empty {
+                    display: none;
                     font-size: 12px;
                     height: 16px;
                     width: auto;
@@ -118,9 +126,117 @@
                     margin-top: -28px;
                     background: url(../../images/regest.png) no-repeat right -57px;
                 }
+                #password_tip {
+                    display: none;
+                    font-size: 12px;
+                    line-height: 24px;
+                    color: #a5a5a5;
+                }
+                #password2_tip {
+                    display: none;
+                    font-size: 12px;
+                    line-height: 24px;
+                    color: #a5a5a5;
+                }
+                .i_true {
+                    display: none;
+                    height: 16px;
+                    width: auto;
+                    float: right;
+                    padding-right: 25px;
+                    margin-top: -28px;
+                    background: url(../../images/regest.png) no-repeat right 2px;
+                }
                 .error {
                     font-size: 12px;
                     color: #e72418;
+                }
+                .box_safety {
+                    display: none;
+                    font-size: 12px;
+                    float: right;
+                    line-height: 24px;
+                    color: #a5a5a5;
+                    li {
+                        float: left;
+                        height: 14px;
+                        line-height: 14px;
+                        padding: 0 9px;
+                        border-right: 1px solid #fff;
+                        font-family: \5b8b\4f53;
+                        color: #fff;
+                    }
+                }
+            }
+            .reg_pass_capslock {
+                display: none;
+                margin-top: -30px;
+                margin-bottom: 10px;
+                width: 338px;
+                background-color: #ffffe5;
+                border: 1px solid #fadd87;
+                color: #f60;
+                position: relative;
+                .capsLock_msg_i {
+                    background: url(../../images/regest.png) no-repeat 5px -50px;
+                    display: inline-block;
+                    height: 30px;
+                    margin-right: 10px;
+                    vertical-align: middle;
+                    width: 20px;
+                }
+                .capsLock_msg_s {
+                    background: url(../../images/scbgv.png) no-repeat -15px -62px;
+                    bottom: -9px;
+                    height: 9px;
+                    left: 38px;
+                    position: absolute;
+                    width: 15px;
+                }
+            }
+            .verify_box {
+                display: none;
+                height: 60px;
+                min-height: 60px;
+                .u_verify {
+                    width: 150px;
+                    margin-right: 10px;
+                    padding-left: 10px;
+                    float: left;
+                    background: none;
+                }
+                .verifyimg {
+                    margin-left: 10px;
+                    float: left;
+                }
+                .verifylink {
+                    float: left;
+                    margin-left: 10px;
+                    line-height: 40px;
+                    color: #0083ce;
+                    font-size: 12px;
+                }
+                .i_false {
+                    display: none;
+                    float: left;
+                    margin-left: -34px;
+                    margin-top: 12px;
+                    padding-right: 25px;
+                    height: 16px;
+                    width: auto;
+                    background: url(../../images/regest.png) no-repeat right -26px;
+                }
+                .btn_verify {
+                    width: 120px;
+                    border: 1px solid #E6E6E6;
+                    display: block;
+                    height: 38px;
+                    overflow: hidden;
+                    text-align: center;
+                    line-height: 38px;
+                    float: right;
+                    margin-right: 20px;
+                    background: #fff url(../../images/btn_verify_bg.jpg) repeat-x left bottom;
                 }
             }
             .checkbox {
@@ -132,6 +248,15 @@
                 vertical-align: middle;
                 span {
                     font-size: 12px;
+                    a {
+                        font-size: 12px;
+                        color: #0083ce;
+                    }
+                }
+                .error {
+                    display: none;
+                    color: #e72418;
+                    padding-top: 5px;
                 }
             }
         }
