@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shutcut icon" href="images/favicon.ico">
     <link rel="stylesheet" href="dist/css/login.css" />
+    <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
     <title>登录</title>
 </head>
 
@@ -26,7 +27,7 @@
         </div>
         <div class="tab_con" id="commonLogin">
             <h2 class="lg_titile">
-                <span class="fr">还不是1药网会员？<a href="javascript:;" class="blue_link">免费注册</a></span>Hi，欢迎登录！
+                <span class="fr">还不是1药网会员？<a href="register.html" class="blue_link">免费注册</a></span>Hi，欢迎登录！
             </h2>
             <form autocomplete="off">
                 <div class="reg_row">
@@ -46,7 +47,7 @@
                     <!-- 验证码 -->
                     <input type="text" maxlength="4" id="vcd" tabindex="3" name="validCode" placeholder="验证码" class="form-control u_verify">
                     <i id="vcd_tatus"></i>
-                    <img src="/sso/getSecurityCode.action?t=1512976236197" alt="验证码" id="loginVcode" class="code verifyimg" onclick="this.src='sso/getSecourityCode.action?t='+(new date()).getTime()">
+                    <img src="/sso/getSecurityCode.action?t=1512976236197" alt="验证码123" id="loginVcode" class="code verifyimg" onclick="this.src='sso/getSecourityCode.action?t='+(new date()).getTime()">
                     <a href="javascript:;" class="verifylink" id="changecode" tabindex="-1">换一张</a>
                     <span id="vcd_desc" class="error"></span>
                 </div>
@@ -83,7 +84,7 @@
         <!-- 快捷登录 -->
         <div class="tab_con" id="quickLogin">
             <h2 class="lg_titile">
-                <span class="fr">还不是1药网会员？<a href="javascript:;" class="blue_link">免费注册</a></span>Hi，欢迎登录！
+                <span class="fr">还不是1药网会员？<a href="register.html" class="blue_link">免费注册</a></span>Hi，欢迎登录！
             </h2>
             <div class="form_group pd35 clearFix">
                 <label class="lbs f1">
@@ -145,6 +146,10 @@
             Copyright© 1药网 2010-2015， All Rights Reserved
         </p>
     </div>
+    <div class="login_load">
+        <img src="images/login_load.gif">
+    </div>
+    <script src="dist/js/login.js"></script>
 </body>
 
 </html>
