@@ -230,10 +230,39 @@ $('.category').hover(function() {
     $('.category').css('display', 'none');
 });
 
-//跨域请求数据
-/* $.getJSON('http://www.111.com.cn/search/search.action?keyWord=3m&callback=?', function(data) {
-    console.log(data);
-}); */
+
+
+var sDefault = $('#word').attr('default');
+$('#word').val(sDefault);
+$('#word').blur(function() {
+    $('#searchSuggest ul').css('display', 'none');
+    if ($('#word').val() === '') {
+        $('#word').val(sDefault);
+    }
+});
+$('#word').focus(function() {
+    if ($('#word').val() === sDefault) {
+        $('#word').val('');
+    }
+});
+$('#word').on('input', function() {
+
+    var sWord = $('#word').val();
+    console.log(sWord);
+    //跨域请求数据
+    $.getJSON('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=' + sWord + '&json=1&p=3&sid=1435_21096_25178_20927&req=2&csor=2&pwd=2&cb=?', function(data) {
+        console.log(data.s);
+        $('#searchSuggest ul').css('display', 'block');
+        $.each(data.s, function(k, v) {
+            console.log(k);
+            if (k > 0) {
+                return false;
+            }
+            $('<li></li>').html(v).appendTo($('#searchSuggest ul'));
+        })
+    });
+});
+
 
 //友情链接效果
 $('.fri_tit li').mouseenter(function() {
@@ -246,4 +275,13 @@ $('.fri_tit li').mouseenter(function() {
         $('.fri_ct').css('display', 'none');
         $('.friendly').css('display', 'block');
     }
+});
+
+$('.consult_tt').click(function() {
+    $('.consult_tt').removeClass('tabMenu_cur');
+    $(this).addClass('tabMenu_cur');
+});
+$('.server_tab li').click(function() {
+    $('.server_tab li').removeClass('on');
+    $(this).addClass('on');
 });

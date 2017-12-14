@@ -1,0 +1,1 @@
+$(".no_bd_b").click(function(){$(this).next(".list_ul").stop(!0).toggle("normal")});

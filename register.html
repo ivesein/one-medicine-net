@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shutcut icon" href="images/favicon.ico">
     <link rel="stylesheet" href="dist/css/register.css">
+    <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
     <title>注册</title>
 </head>
 
@@ -24,9 +25,9 @@
             <form autocomplete="off">
                 <div class="reg_row ie_myemail">
                     <!-- 手机号 -->
-                    <input type="text" name="email" id="email" utocomplete="off" placeholder="手机号" class="form-control u_name empty" tabindex="1">
+                    <input type="text" name="email" id="email" autofocus utocomplete="off" placeholder="手机号" class="form-control u_name empty" tabindex="1">
                     <i id="email_empty" class="i_empty">不能为空</i>
-                    <i id="i_true" class="email_true"></i>
+                    <i id="email_true" class="i_true"></i>
                     <span id="accountDesc" class="error"></span>
                 </div>
                 <div class="reg_pass_capslock" id="capsLock_msg">
@@ -127,6 +128,7 @@
             Copyright© 1药网 2010-2015， All Rights Reserved
         </p>
     </div>
+    <script src="dist/js/register.js"></script>
 </body>
 
 </html>
